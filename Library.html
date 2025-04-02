@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF Library - Smart Search</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Anta">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: white;
+      --primary-dark: #2980b9;
+      --light-gray: #000000;
+      --text-color: white;
+      --border-color: #ddd;
+        --section-bg: #343434;
+        --buttons: lightblue;
+    }
+    
+    body {
+      #font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        font-family: Barlow Condensed, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: var(--light-gray);
+      color: var(--text-color);
+    }
+    
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 20px;
+    }
+    
+    header {
+        background-color: var(--section-bg);
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+      padding: 20px 0;
+      margin-bottom: 30px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: var(--primary-color);
+      margin: 0;
+      padding-bottom: 20px;
+    }
+    
+    .search-container {
+      display: flex;
+      max-width: 800px;
+      margin: 0 auto;
+      position: relative;
+    }
+    
+    #search-input {
+      flex-grow: 1;
+      padding: 12px 16px;
+      font-size: 16px;
+      border: 2px solid var(--border-color);
+      border-radius: 4px 0 0 4px;
+      transition: border-color 0.3s;
+    }
+    
+    #search-input:focus {
+      outline: none;
+      border-color: var(--primary-color);
+    }
+    
+    #search-button {
+      padding: 12px 24px;
+      background-color: var(--buttons);
+      color: black;
+      border: none;
+      border-radius: 0 4px 4px 0;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    #search-button:hover {
+      background-color: black;
+        color: white;
+    }
+    
+    .search-suggestions {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      background-color: var(--section-bg);
+      border: 1px solid var(--border-color);
+      border-radius: 0 0 4px 4px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      max-height: 200px;
+      overflow-y: auto;
+      display: none;
+    }
+    
+    .search-suggestion {
+      padding: 10px 16px;
+      cursor: pointer;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .search-suggestion:last-child {
+      border-bottom: none;
+    }
+    
+    .search-suggestion:hover {
+      background-color: var(--buttons);
+        color: black;
+    }
+    
+    .search-helper {
+      font-size: 14px;
+      color: white;
+      margin-top: 8px;
+      text-align: center;
+    }
+    
+    .pdf-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 20px;
+      margin-top: 30px;
+    }
+    
+    .pdf-card {
+      background-color: var(--section-bg);
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    
+    .pdf-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    
+    .pdf-thumbnail {
+      height: 200px;
+      background-color: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-bottom: 1px solid var(--border-color);
+    }
+    
+    .pdf-thumbnail img {
+      max-width: 100%;
+      max-height: 100%;
+    }
+    
+    .pdf-details {
+      padding: 15px;
+    }
+    
+    .pdf-title {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 0 0 10px 0;
+      color: var(--text-color);
+    }
+    
+    .pdf-meta {
+      font-size: 14px;
+      color: var(--text-color);
+      margin-bottom: 15px;
+    }
+    
+    .pdf-description {
+      font-size: 14px;
+      color: var(--text-color);
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    
+    .pdf-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 5px;
+      margin-bottom: 15px;
+    }
+    
+    .pdf-tag {
+      font-size: 12px;
+      background-color: lightblue;
+      color: black;
+      padding: 3px 8px;
+      border-radius: 12px;
+    }
+    
+    .pdf-actions {
+      display: flex;
+      justify-content: space-between;
+    }
+    
+    .pdf-actions a {
+      display: inline-block;
+      padding: 8px 16px;
+      background-color: var(--buttons);
+      color: black;
+      text-decoration: none;
+      border-radius: 4px;
+      font-size: 14px;
+      transition: background-color 0.3s;
+    }
+    
+    .pdf-actions a:hover {
+      background-color: black;
+        color: white;
+    }
+    
+    .match-highlight {
+      background-color: lightblue;
+    color: black;
+      padding: 0 2px;
+      border-radius: 2px;
+    }
+    
+    .no-results {
+      text-align: center;
+      padding: 40px;
+      background-color: white;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-top: 30px;
+    }
+    
+    .pagination {
+      display: flex;
+      justify-content: center;
+      margin-top: 30px;
+    }
+    
+    .pagination button {
+      padding: 10px 15px;
+      margin: 0 5px;
+      background-color: var(--buttons);
+      border: 1px solid var(--border-color);
+      border-radius: 4px;
+      cursor: pointer;
+      transition: background-color 0.3s;
+    }
+    
+    .pagination button.active {
+      background-color: black;
+      color: white;
+      border-color: var(--primary-color);
+    }
+    
+    .pagination button:hover:not(.active) {
+      background-color: var(--light-gray);
+        color: white;
+    }
+    
+    /* PDF Viewer Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+    }
+    
+    .modal-content {
+      position: relative;
+      margin: 20px auto;
+      width: 90%;
+      max-width: 1000px;
+      height: 90%;
+      background-color: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 20px;
+      font-size: 28px;
+      font-weight: bold;
+      color: white;
+      background-color: rgba(0, 0, 0, 0.5);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      z-index: 1100;
+    }
+    
+    .pdf-viewer {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+    
+    /* Categories sidebar */
+    .content-wrapper {
+      display: flex;
+    }
+    
+    .sidebar {
+      width: 250px;
+      background-color: var(--section-bg);
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      margin-right: 20px;
+      height: fit-content;
+    }
+    
+    .main-content {
+      flex-grow: 1;
+    }
+    
+    .category-list {
+      list-style-type: none;
+      padding: 0;
+      margin: 0;
+    }
+    
+    .category-list li {
+      padding: 10px 0;
+      border-bottom: 1px solid var(--border-color);
+      cursor: pointer;
+      transition: color 0.3s;
+    }
+    
+    .category-list li:hover {
+      color: var(--primary-color);
+    }
+    
+    .category-list li.active {
+      color: var(--primary-color);
+      font-weight: bold;
+    }
+    
+    .search-stat {
+      background-color: var(--section-bg);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+      margin-bottom: 20px;
+    }
+    
+    @media (max-width: 768px) {
+      .content-wrapper {
+        flex-direction: column;
+      }
+      
+      .sidebar {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      
+      .pdf-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container">
+      <h1>JIECEP MSU-GSC E-Library</h1>
+      <div class="search-container">
+        <input type="text" id="search-input" placeholder="Search for PDF documents...">
+        <button id="search-button">Search</button>
+        <div class="search-suggestions" id="search-suggestions"></div>
+      </div>
+      <div class="search-helper">
+        Try searching by title, author, acronyms (like "ECT" for "Eletrical Cirrcuit Analysis"), or keywords.
+          <br> However, it is recommend to search with the course code for more accurate results.
+      </div>
+    </div>
+  </header>
+  
+  <div class="container">
+    <div class="content-wrapper">
+      <aside class="sidebar">
+        <h3>Categories</h3>
+        <ul class="category-list">
+          <li class="active" data-category="all">All</li>
+            <li data-category="1styr">1st Year</li>
+            <li data-category="2ndyr">2nd Year</li>
+            <li data-category="3rdyr">3rd Year</li>
+            <li data-category="4thyr">4th Year</li>
+        </ul>
+      </aside>
+      
+      <main class="main-content">
+        <div id="search-stats" class="search-stat" style="display: none;"></div>
+        
+        <div class="pdf-grid" id="pdf-container">
+          <!-- PDF cards will be populated here -->
+        </div>
+        
+        <div class="pagination" id="pagination">
+          <!-- Pagination buttons will be added here -->
+        </div>
+      </main>
+    </div>
+  </div>
+  
+  <!-- PDF Viewer Modal -->
+  <div class="modal" id="pdf-modal">
+    <div class="modal-content">
+      <span class="close-button" id="close-modal">&times;</span>
+      <iframe class="pdf-viewer" id="pdf-viewer"></iframe>
+    </div>
+  </div>
+  
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      // ====== THIS IS WHERE YOU CAN ADD YOUR PDFs ======
+      // This is the array where you can add your actual PDFs
+      // Format for each PDF entry:
+      // {
+      //   id: unique identifier,
+      //   title: "Title of the PDF",
+      //   description: "Short description of the content",
+      //   category: "Category name (must match one of the sidebar categories)",
+      //   author: "Author name",
+      //   date: "Publication date",
+      //   fileSize: "File size with unit",
+      //   pdfPath: "path/to/your/pdf/file.pdf", <-- IMPORTANT: Replace with actual path to your PDF
+      //   thumbnailPath: "path/to/thumbnail/image.jpg", <-- Optional: Replace with actual thumbnail path
+      //   tags: ["tag1", "tag2"], <-- Add relevant tags
+      //   keywords: ["keyword1", "keyword2"], <-- Add keywords for search
+      //   acronyms: ["acronym1", "acronym2"] <-- Add possible acronyms (e.g., "EDA" for "Engineering Data Analysis")
+      // }
+      
+      const pdfLibrary = [ //IF MA FINALIZE, ADJUST id per yr
+        {//ECT
+          id: 1,
+          title: "Fundamentals of Electric Circuit",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Matthew N.O. Sadiku",
+          ed: "3rd Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://m.media-amazon.com/images/I/51EY9WW3P3L._AC_UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "sadiku 3rd"],
+          keywords: ["circuits", "ect", "sadiku 3rd"],
+          acronyms: ["ECT", "FEC"]
+        },
+          {
+          id: 2,
+          title: "Fundamentals of Electric Circuit",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Matthew N.O. Sadiku",
+          ed: "5th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://m.media-amazon.com/images/I/71AvEEpNwyL._UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "sadiku 5th"],
+          keywords: ["circuits", "ect", "sadiku 5th"],
+          acronyms: ["ECT", "FEC"]
+        },
+          {
+          id: 3,
+          title: "Engineering Circuit Analysis",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "William H. Hayt, Jr. et al",
+          ed: "7th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://m.media-amazon.com/images/I/51pGCARE+gL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "hayt 7th"],
+          keywords: ["circuits", "ect", "hayt 7th"],
+          acronyms: ["ECT", "ECA"]
+        },
+          {
+          id: 4,
+          title: "Introductory Circuit Analysis",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Boylestad",
+          ed: "10th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://m.media-amazon.com/images/I/51-rRAbyAQL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "boylestad"],
+          keywords: ["circuits", "ect", "boylestad"],
+          acronyms: ["ECT", "ICA"]
+        },//EDC
+          {
+          id: 5,
+          title: "Electronic Devices and Circuit Theory",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Robert Boylestad et al.",
+          ed: "7th Edition", //previously date
+          code: "ECE130",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://m.media-amazon.com/images/I/A1YVyeH2usL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["electronics", "edc", "boylestad"],
+          keywords: ["electronics", "edc", "boylestad"],
+          acronyms: ["EDC", "EDCT"]
+        }, 
+          {
+          id: 6,
+          title: "Principles of Electronics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "V&R Mehta",
+          ed: "11th Edition", //previously date
+          code: "ECE130",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://m.media-amazon.com/images/I/71MAWO-6ZnL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["electronics", "edc", "boylestad"],
+          keywords: ["electronics", "edc", "mehta"],
+          acronyms: ["EDC", "POE"]
+        }, //ENGMATH
+          {
+          id: 7,
+          title: "Advanced Engineering Mathematics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Alan Jeffrey",
+          ed: "2002 Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://books.google.com/books/content?id=wfMeAQAAIAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70bud-w1NjQ6Be_sqJqks1FaECGQV7ECaD_Y0ohKRhwcaykCTTTKvxB___KXZ9PxKUqAZwOSIV34okROoS-eTTFZsPA6tI4RTvz4YIDSVQeObmZF63DRPNe8dEuNRGRSPu742Ne",
+          tags: ["engmath", "math", "alan", "jeffrey"],
+          keywords: ["engmath", "ens", "alan", "jeffrey"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+          {
+          id: 8,
+          title: "Materials Science and Engineering, An Introduction",
+          description: "blank description muna hehe",
+          category: "1styr",
+          author: "D. Callister",
+          ed: "8th Edition", //previously date
+          code: "ENS167",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://m.media-amazon.com/images/I/518HkwxjuCL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["matsci", "ens"],
+          keywords: ["engmath", "ens", "sir banal", "sir holy"],
+          acronyms: ["MATSCI", "BANAL"]
+        },
+          {
+          id: 9,
+          title: "Digital Signal Processing Fundamentals and Applications",
+          description: "blank description muna hehe",
+          category: "3rdyr",
+          author: "Li Tan et al.",
+          ed: "2nd Edition", //previously date
+          code: "ECE104",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780124158931.jpg",
+          tags: ["signals", "ece", "spectra"],
+          keywords: ["signals", "ece", "signals processing", "spectra"],
+          acronyms: ["SSS", "SPECTRA"]
+        },
+          {
+          id: 10,
+          title: "Control Systems Engineering",
+          description: "blank description muna hehe",
+          category: "4thyr",
+          author: "Norman S, Nise",
+          ed: "6th Edition", //previously date
+          code: "ECE112",//previously fileSize
+          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          thumbnailPath: "https://media.wiley.com/product_data/coverImage300/07/11197214/1119721407.jpg",
+          tags: ["feedback", "control", "ece"],
+          keywords: ["feedback", "control", "ece"],
+          acronyms: ["FNC", "FEEDBACK"]
+        },
+        
+      ];
+      // ====== END OF PDF LIBRARY SECTION ======
+      
+      // Variables for pagination
+      const itemsPerPage = 6;
+      let currentPage = 1;
+      let currentCategory = 'all';
+      let currentSearchTerm = '';
+      
+      // DOM elements
+      const pdfContainer = document.getElementById('pdf-container');
+      const searchInput = document.getElementById('search-input');
+      const searchButton = document.getElementById('search-button');
+      const searchSuggestions = document.getElementById('search-suggestions');
+      const paginationContainer = document.getElementById('pagination');
+      const categoryItems = document.querySelectorAll('.category-list li');
+      const pdfModal = document.getElementById('pdf-modal');
+      const pdfViewer = document.getElementById('pdf-viewer');
+      const closeModal = document.getElementById('close-modal');
+      const searchStats = document.getElementById('search-stats');
+      
+      // Global search index
+      const searchIndex = buildSearchIndex();
+      
+      // Build search index for faster searching
+      function buildSearchIndex() {
+          const index = {};
+
+          pdfLibrary.forEach(pdf => {
+            // Add all searchable terms to the index
+            const terms = [
+              ...pdf.title.toLowerCase().split(/\s+/),
+              ...pdf.description.toLowerCase().split(/\s+/),
+              ...pdf.author.toLowerCase().split(/\s+/),
+              pdf.code.toLowerCase(), // Add the course code as a searchable term
+              ...(pdf.tags || []).map(tag => tag.toLowerCase()),
+              ...(pdf.keywords || []).map(keyword => keyword.toLowerCase()),
+              ...(pdf.acronyms || []).map(acronym => acronym.toLowerCase())
+            ];
+
+            // Add full title as a single term
+            terms.push(pdf.title.toLowerCase());
+
+            // Count occurrences of each term for this PDF
+            terms.forEach(term => {
+              if (!index[term]) {
+                index[term] = {};
+              }
+
+              if (!index[term][pdf.id]) {
+                index[term][pdf.id] = 1;
+              } else {
+                index[term][pdf.id]++;
+              }
+            });
+
+            // Add individual words from title to support partial matching
+            pdf.title.toLowerCase().split(/\s+/).forEach(word => {
+              for (let i = 1; i <= word.length; i++) {
+                const prefix = word.substring(0, i);
+                if (!index[prefix]) {
+                  index[prefix] = {};
+                }
+
+                if (!index[prefix][pdf.id]) {
+                  index[prefix][pdf.id] = 0.1; // Lower weight for partial matches
+                }
+              }
+            });
+
+            // Add course code with very high weight - exact matches should be prioritized
+            const code = pdf.code.toLowerCase();
+            if (!index[code]) {
+              index[code] = {};
+            }
+            index[code][pdf.id] = 20; // Very high weight for course code matches
+
+            // Add acronyms with high weight
+            (pdf.acronyms || []).forEach(acronym => {
+              const acr = acronym.toLowerCase();
+              if (!index[acr]) {
+                index[acr] = {};
+              }
+
+              index[acr][pdf.id] = 10; // Higher weight for acronym matches
+            });
+          });
+
+          return index;
+}
+      
+      // Get acronym or initials from multi-word phrases
+      function getAcronymFromPhrase(phrase) {
+        return phrase
+          .split(/\s+/)
+          .map(word => word.charAt(0).toUpperCase())
+          .join('');
+      }
+      
+      // Smart search function
+      function smartSearch(searchTerm) {
+      if (!searchTerm) return [];
+
+      const results = new Map();
+      const normalizedSearch = searchTerm.toLowerCase().trim();
+
+      // Check if the search term is a course code format (typically starts with letters followed by numbers)
+      const isCourseCode = /^[a-z]{2,4}\d{2,3}$/i.test(normalizedSearch);
+
+      // If it looks like a course code, do exact matching only
+      if (isCourseCode) {
+        // Get all PDFs that have this exact course code
+        const exactCodeMatches = pdfLibrary.filter(pdf => 
+          pdf.code.toLowerCase() === normalizedSearch
+        );
+
+        // If we found exact matches, return only those
+        if (exactCodeMatches.length > 0) {
+          return exactCodeMatches;
+        }
+      }
+
+      // Continue with regular search if it's not a course code or no exact matches were found
+
+      // Check for exact matches in the index
+      if (searchIndex[normalizedSearch]) {
+        Object.entries(searchIndex[normalizedSearch]).forEach(([pdfId, weight]) => {
+          results.set(parseInt(pdfId), (results.get(parseInt(pdfId)) || 0) + weight * 2); // Higher weight for exact matches
+        });
+      }
+
+      // Check for partial word matches
+      Object.keys(searchIndex).forEach(term => {
+        if (term.includes(normalizedSearch) || normalizedSearch.includes(term)) {
+          Object.entries(searchIndex[term]).forEach(([pdfId, weight]) => {
+            results.set(parseInt(pdfId), (results.get(parseInt(pdfId)) || 0) + weight);
+          });
+        }
+      });
+
+      // Check if search term is an acronym of any title
+      pdfLibrary.forEach(pdf => {
+        const titleAcronym = getAcronymFromPhrase(pdf.title);
+        if (titleAcronym.toLowerCase() === normalizedSearch) {
+          results.set(pdf.id, (results.get(pdf.id) || 0) + 5); // High weight for title acronym matches
+        }
+      });
+
+      // Split search terms and check each one
+      const searchTerms = normalizedSearch.split(/\s+/);
+      if (searchTerms.length > 1) {
+        searchTerms.forEach(term => {
+          if (searchIndex[term]) {
+            Object.entries(searchIndex[term]).forEach(([pdfId, weight]) => {
+              results.set(parseInt(pdfId), (results.get(parseInt(pdfId)) || 0) + weight * 0.5); // Lower weight for individual terms
+            });
+          }
+        });
+      }
+
+      // Convert Map to array and sort by relevance score
+      const sortedResults = Array.from(results.entries())
+        .sort((a, b) => b[1] - a[1])
+        .map(([id]) => pdfLibrary.find(pdf => pdf.id === id));
+
+      return sortedResults;
+    }
+
+      // Filter PDFs based on search term and category
+      function filterPDFs() {
+        let filtered = pdfLibrary;
+        
+        // Filter by search term
+        if (currentSearchTerm) {
+          filtered = smartSearch(currentSearchTerm);
+          
+          // Update search stats
+          searchStats.style.display = 'block';
+          searchStats.textContent = `Found ${filtered.length} results for "${currentSearchTerm}"`;
+        } else {
+          searchStats.style.display = 'none';
+        }
+        
+        // Filter by category
+        if (currentCategory !== 'all') {
+          filtered = filtered.filter(pdf => pdf.category === currentCategory);
+          
+          // Update search stats if we're filtering by category and search term
+          if (currentSearchTerm) {
+            searchStats.textContent = `Found ${filtered.length} results for "${currentSearchTerm}" in category "${currentCategory}"`;
+          }
+        }
+        
+        return filtered;
+      }
+      
+      // Highlight matching terms in text
+      function highlightMatches(text, searchTerm) {
+        if (!searchTerm) return text;
+        
+        const normalizedSearch = searchTerm.toLowerCase();
+        const normalizedText = text.toString();
+        
+        // Check if the search term is an exact match for an acronym
+        const acronymRegex = new RegExp(`\\b${normalizedSearch}\\b`, 'gi');
+        if (acronymRegex.test(normalizedText.toLowerCase())) {
+          return normalizedText.replace(
+            new RegExp(`\\b(${normalizedSearch})\\b`, 'gi'),
+            '<span class="match-highlight">$1</span>'
+          );
+        }
+        
+        // Check for partial matches in words
+        const partialRegex = new RegExp(`(${normalizedSearch})`, 'gi');
+        if (partialRegex.test(normalizedText.toLowerCase())) {
+          return normalizedText.replace(
+            partialRegex,
+            '<span class="match-highlight">$1</span>'
+          );
+        }
+        
+        // Check for multiple word search terms
+        const searchTerms = normalizedSearch.split(/\s+/);
+        if (searchTerms.length > 1) {
+          let highlightedText = normalizedText;
+          searchTerms.forEach(term => {
+            highlightedText = highlightedText.replace(
+              new RegExp(`(${term})`, 'gi'),
+              '<span class="match-highlight">$1</span>'
+            );
+          });
+          return highlightedText;
+        }
+        
+        return normalizedText;
+      }
+      
+      // Display PDFs based on current filters and pagination
+      function displayPDFs() {
+        const filtered = filterPDFs();
+        pdfContainer.innerHTML = '';
+        
+        if (filtered.length === 0) {
+          pdfContainer.innerHTML = `
+            <div class="no-results">
+              <h3>No PDFs found</h3>
+              <p>Try adjusting your search criteria or category selection.</p>
+            </div>
+          `;
+          paginationContainer.innerHTML = '';
+          return;
+        }
+        
+        // Calculate pagination
+        const startIndex = (currentPage - 1) * itemsPerPage;
+        const endIndex = Math.min(startIndex + itemsPerPage, filtered.length);
+        const paginatedPDFs = filtered.slice(startIndex, endIndex);
+        
+	// Create HTML for each PDF card
+	paginatedPDFs.forEach(pdf => {
+	  const pdfCard = document.createElement('div');
+	  pdfCard.className = 'pdf-card';
+	  
+	  // Highlight matching terms if there's a search term
+	  const highlightedTitle = currentSearchTerm ? highlightMatches(pdf.title, currentSearchTerm) : pdf.title;
+	  const highlightedDescription = currentSearchTerm ? highlightMatches(pdf.description, currentSearchTerm) : pdf.description;
+	  const highlightedAuthor = currentSearchTerm ? highlightMatches(pdf.author, currentSearchTerm) : pdf.author;
+	  
+	  pdfCard.innerHTML = `
+	    <div class="pdf-thumbnail">
+	      <img src="${pdf.thumbnailPath || '/api/placeholder/200/200'}" alt="${pdf.title} thumbnail">
+	    </div>
+	    <div class="pdf-details">
+	      <h3 class="pdf-title">${highlightedTitle}</h3>
+	      <div class="pdf-meta">
+		By ${highlightedAuthor} • ${pdf.ed} • ${pdf.code}
+	      </div>
+	      <p class="pdf-description">${highlightedDescription}</p>
+	      <div class="pdf-tags">
+		${pdf.tags.map(tag => `<span class="pdf-tag">${tag}</span>`).join('')}
+	      </div>
+	      <div class="pdf-actions">
+		<a href="javascript:void(0);" class="view-pdf" data-pdf="${pdf.pdfPath}">View PDF</a>
+		<a href="${pdf.pdfPath}" download target="_blank">Download</a>
+	      </div>
+	    </div>
+	  `;
+	  
+	  // Add event listener to view PDF button
+	  const viewButton = pdfCard.querySelector('.view-pdf');
+	  viewButton.addEventListener('click', function() {
+	    openPdfViewer(pdf.pdfPath);
+	  });
+	  
+	  pdfContainer.appendChild(pdfCard);
+	});
+
+	// Create pagination buttons
+	updatePagination(filtered.length);
+	}
+
+	// Update pagination buttons
+	function updatePagination(totalItems) {
+	  paginationContainer.innerHTML = '';
+	  
+	  const totalPages = Math.ceil(totalItems / itemsPerPage);
+	  if (totalPages <= 1) return;
+	  
+	  // Add previous button
+	  if (currentPage > 1) {
+	    const prevButton = document.createElement('button');
+	    prevButton.textContent = '← Previous';
+	    prevButton.addEventListener('click', () => {
+	      currentPage--;
+	      displayPDFs();
+	      window.scrollTo(0, 0);
+	    });
+	    paginationContainer.appendChild(prevButton);
+	  }
+	  
+	  // Add page number buttons
+	  const maxButtons = 5;
+	  const startPage = Math.max(1, currentPage - Math.floor(maxButtons / 2));
+	  const endPage = Math.min(totalPages, startPage + maxButtons - 1);
+	  
+	  for (let i = startPage; i <= endPage; i++) {
+	    const pageButton = document.createElement('button');
+	    pageButton.textContent = i;
+	    if (i === currentPage) {
+	      pageButton.classList.add('active');
+	    }
+	    
+	    pageButton.addEventListener('click', () => {
+	      currentPage = i;
+	      displayPDFs();
+	      window.scrollTo(0, 0);
+	    });
+	    
+	    paginationContainer.appendChild(pageButton);
+	  }
+	  
+	  // Add next button
+	  if (currentPage < totalPages) {
+	    const nextButton = document.createElement('button');
+	    nextButton.textContent = 'Next →';
+	    nextButton.addEventListener('click', () => {
+	      currentPage++;
+	      displayPDFs();
+	      window.scrollTo(0, 0);
+	    });
+	    paginationContainer.appendChild(nextButton);
+	  }
+	}
+
+	// Format date for display (if needed)
+	function formatDate(dateStr) {
+	  return dateStr; // This could be enhanced to format dates differently if needed
+	}
+
+	// Format file size for display (if needed)
+	function formatFileSize(sizeStr) {
+	  return sizeStr; // This could be enhanced to format file sizes differently if needed
+	}
+
+	// Function to open PDF viewer modal
+	function openPdfViewer(pdfPath) {
+	  pdfViewer.src = pdfPath;
+	  pdfModal.style.display = 'block';
+	  document.body.style.overflow = 'hidden'; // Prevent scrolling while modal is open
+	}
+
+	// Function to handle search suggestions
+	function updateSearchSuggestions(searchTerm) {
+	  if (!searchTerm || searchTerm.length < 2) {
+	    searchSuggestions.style.display = 'none';
+	    return;
+	  }
+	  
+	  // Find matching terms from the index
+	  const matches = Object.keys(searchIndex)
+	    .filter(term => term.includes(searchTerm.toLowerCase()))
+	    .slice(0, 5); // Limit to 5 suggestions
+	  
+	  if (matches.length === 0) {
+	    searchSuggestions.style.display = 'none';
+	    return;
+	  }
+	  
+	  // Display suggestions
+	  searchSuggestions.innerHTML = '';
+	  matches.forEach(match => {
+	    const suggestion = document.createElement('div');
+	    suggestion.className = 'search-suggestion';
+	    suggestion.textContent = match;
+	    suggestion.addEventListener('click', () => {
+	      searchInput.value = match;
+	      searchSuggestions.style.display = 'none';
+	      performSearch(match);
+	    });
+	    searchSuggestions.appendChild(suggestion);
+	  });
+	  
+	  searchSuggestions.style.display = 'block';
+	}
+
+	// Function to perform search
+	function performSearch(searchTerm) {
+	  currentSearchTerm = searchTerm.trim();
+	  currentPage = 1;
+	  displayPDFs();
+	}
+
+	// Event listeners
+	searchInput.addEventListener('input', function() {
+	  updateSearchSuggestions(this.value);
+	});
+
+	searchInput.addEventListener('focus', function() {
+	  if (this.value.length >= 2) {
+	    updateSearchSuggestions(this.value);
+	  }
+	});
+
+	document.addEventListener('click', function(event) {
+	  if (!searchSuggestions.contains(event.target) && event.target !== searchInput) {
+	    searchSuggestions.style.display = 'none';
+	  }
+	});
+
+	searchButton.addEventListener('click', function() {
+	  performSearch(searchInput.value);
+	});
+
+	searchInput.addEventListener('keypress', function(event) {
+	  if (event.key === 'Enter') {
+	    performSearch(this.value);
+	  }
+	});
+
+	// Category filter event listeners
+	categoryItems.forEach(item => {
+	  item.addEventListener('click', function() {
+	    // Update active category
+	    categoryItems.forEach(cat => cat.classList.remove('active'));
+	    this.classList.add('active');
+	    
+	    // Update filter and display
+	    currentCategory = this.dataset.category;
+	    currentPage = 1;
+	    displayPDFs();
+	  });
+	});
+
+	// Modal close button event listener
+	closeModal.addEventListener('click', function() {
+	  pdfModal.style.display = 'none';
+	  pdfViewer.src = '';
+	  document.body.style.overflow = ''; // Restore scrolling
+	});
+
+	// Close modal when clicking outside of the content
+	window.addEventListener('click', function(event) {
+	  if (event.target === pdfModal) {
+	    pdfModal.style.display = 'none';
+	    pdfViewer.src = '';
+	    document.body.style.overflow = '';
+	  }
+	});
+
+	// Initialize the display
+	displayPDFs();
+	});
+  </script>
+</body>
+</html>
+
+
+
+
