@@ -386,6 +386,8 @@
       <div class="search-helper">
         Try searching by title, author, acronyms (like "ECT" for "Eletrical Cirrcuit Analysis"), or keywords.
           <br> However, it is recommend to search with the course code for more accurate results.
+          <br>
+          <br> Disclaimer: This is only for educational purposes.
       </div>
     </div>
   </header>
@@ -439,111 +441,22 @@
       //   date: "Publication date",
       //   fileSize: "File size with unit",
       //   pdfPath: "path/to/your/pdf/file.pdf", <-- IMPORTANT: Replace with actual path to your PDF
+      //   dlPath: "link to download", <--- download link from gdrive
       //   thumbnailPath: "path/to/thumbnail/image.jpg", <-- Optional: Replace with actual thumbnail path
       //   tags: ["tag1", "tag2"], <-- Add relevant tags
       //   keywords: ["keyword1", "keyword2"], <-- Add keywords for search
       //   acronyms: ["acronym1", "acronym2"] <-- Add possible acronyms (e.g., "EDA" for "Engineering Data Analysis")
       // }
-      
+      // NOTE: instructions for pdfPath
+      // Get the pdf path by following this template and replace the FILE_ID with the FILE_ID of the pdf.
+      // template:  pdfPath: "https://drive.google.com/file/d/FILE_ID/preview"
+      // NOTE: instructions for dlPath
+      // Same with pdf path. Here's the template.
+      // template: dlPath: "https://drive.google.com/uc?export=download&id=FILE_ID"
+     
+      //  pdfPath: "https://drive.google.com/file/d/FILE_ID/preview"
+      //  dlPath: "https://drive.google.com/uc?export=download&id=FILE_ID"
       const pdfLibrary = [ //IF MA FINALIZE, ADJUST id per yr
-        {//ECT
-          id: 1,
-          title: "Fundamentals of Electric Circuit",
-          description: "blank description muna hehe",
-          category: "2ndyr",
-          author: "Matthew N.O. Sadiku",
-          ed: "3rd Edition", //previously date
-          code: "EEE130",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
-          thumbnailPath: "https://m.media-amazon.com/images/I/51EY9WW3P3L._AC_UF1000,1000_QL80_.jpg",
-          tags: ["circuits", "ect", "sadiku 3rd"],
-          keywords: ["circuits", "ect", "sadiku 3rd"],
-          acronyms: ["ECT", "FEC"]
-        },
-          {
-          id: 2,
-          title: "Fundamentals of Electric Circuit",
-          description: "blank description muna hehe",
-          category: "2ndyr",
-          author: "Matthew N.O. Sadiku",
-          ed: "5th Edition", //previously date
-          code: "EEE130",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
-          thumbnailPath: "https://m.media-amazon.com/images/I/71AvEEpNwyL._UF1000,1000_QL80_.jpg",
-          tags: ["circuits", "ect", "sadiku 5th"],
-          keywords: ["circuits", "ect", "sadiku 5th"],
-          acronyms: ["ECT", "FEC"]
-        },
-          {
-          id: 3,
-          title: "Engineering Circuit Analysis",
-          description: "blank description muna hehe",
-          category: "2ndyr",
-          author: "William H. Hayt, Jr. et al",
-          ed: "7th Edition", //previously date
-          code: "EEE130",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
-          thumbnailPath: "https://m.media-amazon.com/images/I/51pGCARE+gL._AC_UF1000,1000_QL80_.jpg",
-          tags: ["circuits", "ect", "hayt 7th"],
-          keywords: ["circuits", "ect", "hayt 7th"],
-          acronyms: ["ECT", "ECA"]
-        },
-          {
-          id: 4,
-          title: "Introductory Circuit Analysis",
-          description: "blank description muna hehe",
-          category: "2ndyr",
-          author: "Boylestad",
-          ed: "10th Edition", //previously date
-          code: "EEE130",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
-          thumbnailPath: "https://m.media-amazon.com/images/I/51-rRAbyAQL._AC_UF1000,1000_QL80_.jpg",
-          tags: ["circuits", "ect", "boylestad"],
-          keywords: ["circuits", "ect", "boylestad"],
-          acronyms: ["ECT", "ICA"]
-        },//EDC
-          {
-          id: 5,
-          title: "Electronic Devices and Circuit Theory",
-          description: "blank description muna hehe",
-          category: "2ndyr",
-          author: "Robert Boylestad et al.",
-          ed: "7th Edition", //previously date
-          code: "ECE130",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
-          thumbnailPath: "https://m.media-amazon.com/images/I/A1YVyeH2usL._AC_UF1000,1000_QL80_.jpg",
-          tags: ["electronics", "edc", "boylestad"],
-          keywords: ["electronics", "edc", "boylestad"],
-          acronyms: ["EDC", "EDCT"]
-        }, 
-          {
-          id: 6,
-          title: "Principles of Electronics",
-          description: "blank description muna hehe",
-          category: "2ndyr",
-          author: "V&R Mehta",
-          ed: "11th Edition", //previously date
-          code: "ECE130",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
-          thumbnailPath: "https://m.media-amazon.com/images/I/71MAWO-6ZnL._AC_UF1000,1000_QL80_.jpg",
-          tags: ["electronics", "edc", "boylestad"],
-          keywords: ["electronics", "edc", "mehta"],
-          acronyms: ["EDC", "POE"]
-        }, //ENGMATH
-          {
-          id: 7,
-          title: "Advanced Engineering Mathematics",
-          description: "blank description muna hehe",
-          category: "2ndyr",
-          author: "Alan Jeffrey",
-          ed: "2002 Edition", //previously date
-          code: "ENS181",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
-          thumbnailPath: "https://books.google.com/books/content?id=wfMeAQAAIAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70bud-w1NjQ6Be_sqJqks1FaECGQV7ECaD_Y0ohKRhwcaykCTTTKvxB___KXZ9PxKUqAZwOSIV34okROoS-eTTFZsPA6tI4RTvz4YIDSVQeObmZF63DRPNe8dEuNRGRSPu742Ne",
-          tags: ["engmath", "math", "alan", "jeffrey"],
-          keywords: ["engmath", "ens", "alan", "jeffrey"],
-          acronyms: ["ENGMATH", "AEM"]
-        },
           {
           id: 8,
           title: "Materials Science and Engineering, An Introduction",
@@ -552,7 +465,8 @@
           author: "D. Callister",
           ed: "8th Edition", //previously date
           code: "ENS167",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          pdfPath: "https://drive.google.com/file/d/1HdXHav53eX3jHyMT0-nhm4w-IALiVuwG/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1HdXHav53eX3jHyMT0-nhm4w-IALiVuwG",
           thumbnailPath: "https://m.media-amazon.com/images/I/518HkwxjuCL._AC_UF1000,1000_QL80_.jpg",
           tags: ["matsci", "ens"],
           keywords: ["engmath", "ens", "sir banal", "sir holy"],
@@ -566,7 +480,8 @@
           author: "Li Tan et al.",
           ed: "2nd Edition", //previously date
           code: "ECE104",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          pdfPath: "https://drive.google.com/file/d/10ahCXxVs0O1BEXijcfrCZV2iSiTu6Ibn/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=10ahCXxVs0O1BEXijcfrCZV2iSiTu6Ibn",
           thumbnailPath: "https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780124158931.jpg",
           tags: ["signals", "ece", "spectra"],
           keywords: ["signals", "ece", "signals processing", "spectra"],
@@ -580,13 +495,346 @@
           author: "Norman S, Nise",
           ed: "6th Edition", //previously date
           code: "ECE112",//previously fileSize
-          pdfPath: "path/to/pdfs/intro-to-cs.pdf", // Replace with your actual PDF path
+          pdfPath: "https://drive.google.com/file/d/123KU2wt3Tt7sF3txwKcNxCnhaPeQYCd4/preview",           
+            dlPath: "https://drive.google.com/uc?export=download&id=123KU2wt3Tt7sF3txwKcNxCnhaPeQYCd4",
           thumbnailPath: "https://media.wiley.com/product_data/coverImage300/07/11197214/1119721407.jpg",
           tags: ["feedback", "control", "ece"],
           keywords: ["feedback", "control", "ece"],
           acronyms: ["FNC", "FEEDBACK"]
         },
-        
+          
+        //ADVANCED ENGINEERING MATHEMATICS
+        {
+          id: 7,
+          title: "Advanced Engineering Mathematics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Alan Jeffrey",
+          ed: "2002 Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1VKvq0BPHS0Skg_3elPwJKPiAmaoziisi/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1VKvq0BPHS0Skg_3elPwJKPiAmaoziisi",
+          thumbnailPath: "https://books.google.com/books/content?id=wfMeAQAAIAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70bud-w1NjQ6Be_sqJqks1FaECGQV7ECaD_Y0ohKRhwcaykCTTTKvxB___KXZ9PxKUqAZwOSIV34okROoS-eTTFZsPA6tI4RTvz4YIDSVQeObmZF63DRPNe8dEuNRGRSPu742Ne",
+          tags: ["engmath", "math", "alan", "jeffrey"],
+          keywords: ["engmath", "ens", "alan", "jeffrey"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {
+          id: 11,
+          title: "Advanced Engineering Mathematics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Kreyzig E.",
+          ed: "9th Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1xIpOtVIILN1pNN2oMieke3JDUBmdiqE4/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1xIpOtVIILN1pNN2oMieke3JDUBmdiqE4",
+          thumbnailPath: "https://linuxpurchase.com/image/cache/catalog/Books/buy_online_9788126531356_advanced-engineering-mathematics-9th-edition-online-500x500.jpg",
+          tags: ["engmath", "math", "kreyzig"],
+          keywords: ["engmath", "ens", "jeffrey"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {
+          id: 12,
+          title: "Advanced Engineering Mathematics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Kreyzig E.",
+          ed: "10th Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1XKsARFKSlTgNaTAGnVvkQB61IoiuYzzc/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1XKsARFKSlTgNaTAGnVvkQB61IoiuYzzc",
+          thumbnailPath: "https://ia601202.us.archive.org/BookReader/BookReaderImages.php?zip=/15/items/AdvancedEngineeringMathematics10thEdition_201510/Advanced%20Engineering%20Mathematics%2010th%20Edition_jp2.zip&file=Advanced%20Engineering%20Mathematics%2010th%20Edition_jp2/Advanced%20Engineering%20Mathematics%2010th%20Edition_0000.jp2&id=AdvancedEngineeringMathematics10thEdition_201510&scale=4&rotate=0",
+          tags: ["engmath", "math", "kreyzig"],
+          keywords: ["engmath", "ens", "kreyzig"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {
+          id: 13,
+          title: "Advanced Engineering Mathematics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Peter V. O'Neil",
+          ed: "7th Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1Afwp0EbccdOmEltwnZY4WxvLhJiaH-jo/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1Afwp0EbccdOmEltwnZY4WxvLhJiaH-jo",
+          thumbnailPath: "https://m.media-amazon.com/images/I/71Z3ebd4M8L._AC_UF1000,1000_QL80_.jpg",
+          tags: ["engmath", "math", "oneil"],
+          keywords: ["engmath", "ens", "oneil"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {
+          id: 14,
+          title: "Advanced Modern Engineering Mathematics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Glyn James",
+          ed: "4th Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1wIBn1D763nhduOBJsRfw2ylob_NQKsyF/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1wIBn1D763nhduOBJsRfw2ylob_NQKsyF",
+          thumbnailPath: "https://dokumen.pub/img/advanced-modern-engineering-mathematics-4th-ed-9780273719236-3820106200-1171181221-0273719238.jpg",
+          tags: ["engmath", "math", "glyn"],
+          keywords: ["engmath", "ens", "glyn"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {
+          id: 15,
+          title: "Schaum's Outlines: Differential Equations",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Bronson",
+          ed: "3rd Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1950hKbVTEboiqwPvcouPG2h3a-fa0UF7/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1950hKbVTEboiqwPvcouPG2h3a-fa0UF7",
+          thumbnailPath: "https://www.accessengineeringlibrary.com/sites/default/files/styles/cover_content_details/binary/mheaeworks/c67b07d759f006ab/70533ec26271ae2947ceb56964e04fdd7b832026e2b0b45799f0af75af3a3879/cover.jpg?itok=R6GTWvgp",
+          tags: ["engmath", "math", "bronson", "schaum"],
+          keywords: ["engmath", "ens", "bronson", "schaum"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {
+          id: 16,
+          title: "Higher Engineering Mathematics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "John Bird",
+          ed: "7th Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/15Lo_aB8WH5w5xReTqEpzxrbwmkle1PH3/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=15Lo_aB8WH5w5xReTqEpzxrbwmkle1PH3",
+          thumbnailPath: "https://images.tandf.co.uk/common/jackets/crclarge/978041566/9780415662826.jpg",
+          tags: ["engmath", "math", "bronson", "schaum"],
+          keywords: ["engmath", "ens", "bronson", "schaum"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {
+          id: 17,
+          title: "Schaum's Outlines: Differential Equations Crash Course",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Bronson",
+          ed: "3rd Edition", //previously date
+          code: "ENS181",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1MtTo_eL3mIQxCCQ9Nupae58t51qjDpYJ/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1MtTo_eL3mIQxCCQ9Nupae58t51qjDpYJ",
+          thumbnailPath: "https://image.isu.pub/130116171402-de8a45e8174c4f52a2d5c8b691d456e8/jpg/page_1_thumb_large.jpg",
+          tags: ["engmath", "math", "bronson", "schaum"],
+          keywords: ["engmath", "ens", "bronson", "schaum"],
+          acronyms: ["ENGMATH", "AEM"]
+        },
+        {//ECT
+          id: 1,
+          title: "Fundamentals of Electric Circuit",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Matthew N.O. Sadiku",
+          ed: "3rd Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1nln6F4yixW_wDI2rdXRRkA0Nxz27uklA/preview", // Replace with your actual PDF path
+          dlPath: "https://drive.google.com/uc?export=download&id=1nln6F4yixW_wDI2rdXRRkA0Nxz27uklA", 
+          thumbnailPath: "https://m.media-amazon.com/images/I/51EY9WW3P3L._AC_UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "sadiku 3rd"],
+          keywords: ["circuits", "ect", "sadiku 3rd"],
+          acronyms: ["ECT", "FEC"]
+        },
+        {
+          id: 2,
+          title: "Fundamentals of Electric Circuit",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Matthew N.O. Sadiku",
+          ed: "5th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1QV03rTudEbmQNbuJTM0nuB9f-Sh-cWYl/preview",
+          dlPath: "https://drive.google.com/uc?export=download&id=1QV03rTudEbmQNbuJTM0nuB9f-Sh-cWYl",
+          thumbnailPath: "https://m.media-amazon.com/images/I/71AvEEpNwyL._UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "sadiku 5th"],
+          keywords: ["circuits", "ect", "sadiku 5th"],
+          acronyms: ["ECT", "FEC"]
+        },
+        {
+          id: 3,
+          title: "Engineering Circuit Analysis",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "William H. Hayt, Jr. et al",
+          ed: "7th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/12WBu2Sqhl4-2Qgm8oQ_UyIbJ8cRvsMgZ/preview",
+          dlPath: "https://drive.google.com/uc?export=download&id=12WBu2Sqhl4-2Qgm8oQ_UyIbJ8cRvsMgZ",
+          thumbnailPath: "https://m.media-amazon.com/images/I/51pGCARE+gL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "hayt 7th"],
+          keywords: ["circuits", "ect", "hayt 7th"],
+          acronyms: ["ECT", "ECA"]
+        },
+        {
+          id: 4,
+          title: "Introductory Circuit Analysis",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Boylestad",
+          ed: "10th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1TRYW51myGXfKBt3uzH9UOSYmuxuJlgo6/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1TRYW51myGXfKBt3uzH9UOSYmuxuJlgo6",
+          thumbnailPath: "https://m.media-amazon.com/images/I/51-rRAbyAQL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "boylestad"],
+          keywords: ["circuits", "ect", "boylestad"],
+          acronyms: ["ECT", "ICA"]
+        },
+        {
+          id: 18,
+          title: "Engineering Circuit Analysis",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "William H. Hayt, Jr. et al",
+          ed: "8th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/19BSzmrnCw5muw3frwPa43BBuzWmTvAG9/preview",
+          dlPath: "https://drive.google.com/uc?export=download&id=19BSzmrnCw5muw3frwPa43BBuzWmTvAG9",
+          thumbnailPath: "https://static.wixstatic.com/media/defd98_8b047f54dd5f4879a24ebce117967dcb~mv2.png/v1/fill/w_300,h_370,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Item%20photo.png",
+          tags: ["circuits", "ect", "hayt 7th"],
+          keywords: ["circuits", "ect", "hayt 8th"],
+          acronyms: ["ECT", "ECA"]
+        },
+        {
+          id: 19,
+          title: "Basic Engineering Circuit Analysis",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "J. David Irwin, R. Mark Nelms",
+          ed: "11th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1Iq-kiQkI660lR86cdFU9yfBuucLApTRX/preview",
+          dlPath: "https://drive.google.com/uc?export=download&id=1Iq-kiQkI660lR86cdFU9yfBuucLApTRX",
+          thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI92thATtIRqFgQqsPLaHZLht-LVQTUWHXZQ&s",
+          tags: ["circuits", "ect", "nelms", "beca"],
+          keywords: ["circuits", "ect", "nelms"],
+          acronyms: ["ECT", "BECA"]
+        },
+        {
+          id: 20,
+          title: "Electrical and Electronic Principles and Technology",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "John Bird",
+          ed: "3rd Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1A4ZLsMr5883m-B-QCWvusz8Iu1-JuRX4/preview",
+          dlPath: "https://drive.google.com/uc?export=download&id=1A4ZLsMr5883m-B-QCWvusz8Iu1-JuRX4",
+          thumbnailPath: "https://down-ph.img.susercontent.com/file/f91e388a25dd60bbd19f7408fcff2eeb",
+          tags: ["circuits", "ect", "hayt 7th"],
+          keywords: ["circuits", "ect", "nelms "],
+          acronyms: ["ECT", "ECA"]
+        },
+        {
+          id: 21,
+          title: "Electrical Circuit Theory and Technology",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "John Bird",
+          ed: "2nd Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1wmJ9KFKSwHyK35itC_07xWgpVU96twwk/preview",
+          dlPath: "https://drive.google.com/uc?export=download&id=1wmJ9KFKSwHyK35itC_07xWgpVU96twwk",
+          thumbnailPath: "https://images.tandf.co.uk/common/jackets/crclarge/978075065/9780750657846.jpg",
+          tags: ["circuits", "ect", "hayt 7th"],
+          keywords: ["circuits", "ect", "nelms "],
+          acronyms: ["ECT", "ECA"]
+        },
+        {
+          id: 22,
+          title: "Teach Yourself Electricity and Electronics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Stan Gibilisco",
+          ed: "4th Edition", //previously date
+          code: "EEE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1q3mQRON9Tt0BkyQkSgu-qW1J8MWHedyS/preview",
+          dlPath: "https://drive.google.com/uc?export=download&id=1q3mQRON9Tt0BkyQkSgu-qW1J8MWHedyS",
+          thumbnailPath: "https://m.media-amazon.com/images/I/51UUG7dAy0L._AC_UF1000,1000_QL80_.jpg",
+          tags: ["circuits", "ect", "hayt 7th"],
+          keywords: ["circuits", "ect", "nelms "],
+          acronyms: ["ECT", "ECA"]
+        },
+        //EDC
+        {
+          id: 5,
+          title: "Electronic Devices and Circuit Theory",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Robert Boylestad et al.",
+          ed: "7th Edition", //previously date
+          code: "ECE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1IqGWTcQuguEjcGpS4J-eJl1229q19jKw/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1IqGWTcQuguEjcGpS4J-eJl1229q19jKw",
+          thumbnailPath: "https://m.media-amazon.com/images/I/A1YVyeH2usL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["electronics", "edc", "boylestad"],
+          keywords: ["electronics", "edc", "boylestad"],
+          acronyms: ["EDC", "EDCT"]
+        }, 
+        {
+          id: 6,
+          title: "Principles of Electronics",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "V&R Mehta",
+          ed: "11th Edition", //previously date
+          code: "ECE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1GBjSea7zycu8Z7pgRROOaQMlnR09iat2/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1GBjSea7zycu8Z7pgRROOaQMlnR09iat2",
+          thumbnailPath: "https://m.media-amazon.com/images/I/71MAWO-6ZnL._AC_UF1000,1000_QL80_.jpg",
+          tags: ["electronics", "edc", "boylestad"],
+          keywords: ["electronics", "edc", "mehta"],
+          acronyms: ["EDC", "POE"]
+        },
+        {
+          id: 23,
+          title: "Electronic Design: Circuit and Systems",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Savant Jr., Roden, Carpenter",
+          ed: "2nd Edition", //previously date
+          code: "ECE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1tMj3AgXAYVSEVmpaqGZL7x_ufsitn2sz/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1tMj3AgXAYVSEVmpaqGZL7x_ufsitn2sz",
+          thumbnailPath: "https://covers.openlibrary.org/b/id/10546761-L.jpg",
+          tags: ["electronics", "edc", "boylestad"],
+          keywords: ["electronics", "edc", "mehta"],
+          acronyms: ["EDC", "POE"]
+        },
+        {
+          id: 24,
+          title: "Electronic Devices: Conventional Current Edition",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Thomas L. Floyd",
+          ed: "7th Edition", //previously date
+          code: "ECE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/10rshpqOwVZF4ncTyN0CM1yQ-5FtWHhO7/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=10rshpqOwVZF4ncTyN0CM1yQ-5FtWHhO7",
+          thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFOMr_HiwNa1_Q-xchHBWGx8FKd4q5uePb9Q&s",
+          tags: ["electronics", "edc", "boylestad"],
+          keywords: ["electronics", "edc", "mehta"],
+          acronyms: ["EDC", "POE"]
+        },
+        {
+          id: 25,
+          title: "Electronic Devices",
+          description: "blank description muna hehe",
+          category: "2ndyr",
+          author: "Thomas L. Floyd",
+          ed: "9th Edition", //previously date
+          code: "ECE130",//previously fileSize
+          pdfPath: "https://drive.google.com/file/d/1DlAWTVbtdtzRSXutIaB_dx0qSjivDunZ/preview",           
+          dlPath: "https://drive.google.com/uc?export=download&id=1DlAWTVbtdtzRSXutIaB_dx0qSjivDunZ",
+          thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqWzsvDz1gLujSYpi25gbk5ufo3Ebymj9Qlw&s",
+          tags: ["electronics", "edc", "boylestad"],
+          keywords: ["electronics", "edc", "mehta"],
+          acronyms: ["EDC", "POE"]
+        },
       ];
       // ====== END OF PDF LIBRARY SECTION ======
       
@@ -870,7 +1118,7 @@
 	      </div>
 	      <div class="pdf-actions">
 		<a href="javascript:void(0);" class="view-pdf" data-pdf="${pdf.pdfPath}">View PDF</a>
-		<a href="${pdf.pdfPath}" download target="_blank">Download</a>
+		<a href="${pdf.dlPath}" download target="_blank">Download</a>
 	      </div>
 	    </div>
 	  `;
