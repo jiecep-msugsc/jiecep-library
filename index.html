@@ -335,7 +335,7 @@
                <div class="search-suggestions" id="search-suggestions"></div>
             </div>
             <div class="search-helper">
-               Try searching by title, author, acronyms (like "ECT" for "Eletrical Cirrcuit Analysis"), or keywords.
+               Try searching by title, author, acronyms (like "ECT" for "Electrical Circuit Analysis"), or keywords.
                <br> However, it is recommend to search with the course code for more accurate results.
                <br>
                <br> Disclaimer: This is only for educational purposes.
@@ -374,24 +374,6 @@
       </div>
       <script>
          document.addEventListener('DOMContentLoaded', function() {
-           // ====== THIS IS WHERE YOU CAN ADD YOUR PDFs ======
-           // This is the array where you can add your actual PDFs
-           // Format for each PDF entry:
-           // {
-           //   id: unique identifier,
-           //   title: "Title of the PDF",
-           //   description: "Short description of the content",
-           //   category: "Category name (must match one of the sidebar categories)",
-           //   author: "Author name",
-           //   date: "Publication date",
-           //   fileSize: "File size with unit",
-           //   pdfPath: "path/to/your/pdf/file.pdf", <-- IMPORTANT: Replace with actual path to your PDF
-           //   dlPath: "link to download", <--- download link from gdrive
-           //   thumbnailPath: "path/to/thumbnail/image.jpg", <-- Optional: Replace with actual thumbnail path
-           //   tags: ["tag1", "tag2"], <-- Add relevant tags
-           //   keywords: ["keyword1", "keyword2"], <-- Add keywords for search
-           //   acronyms: ["acronym1", "acronym2"] <-- Add possible acronyms (e.g., "EDA" for "Engineering Data Analysis")
-           // }
            // NOTE: instructions for pdfPath
            // Get the pdf path by following this template and replace the FILE_ID with the FILE_ID of the pdf.
            // template:  pdfPath: "https://drive.google.com/file/d/FILE_ID/preview"
@@ -408,8 +390,8 @@
                description: "Introduction to material properties, structures, and applications for first-year engineering students.",
                category: "1styr",
                author: "D. Callister",
-               ed: "8th Edition", //previously date
-               code: "ENS167",//previously fileSize
+               ed: "8th Edition",  
+               code: "ENS167", 
                pdfPath: "https://drive.google.com/file/d/1HdXHav53eX3jHyMT0-nhm4w-IALiVuwG/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1HdXHav53eX3jHyMT0-nhm4w-IALiVuwG",
                thumbnailPath: "https://m.media-amazon.com/images/I/518HkwxjuCL._AC_UF1000,1000_QL80_.jpg",
@@ -425,8 +407,8 @@
                description: "Explains control system principles, stability, and design with practical engineering examples.",
                category: "4thyr",
                author: "Norman S, Nise",
-               ed: "6th Edition", //previously date
-               code: "ECE112",//previously fileSize
+               ed: "6th Edition",  
+               code: "ECE112", 
                pdfPath: "https://drive.google.com/file/d/123KU2wt3Tt7sF3txwKcNxCnhaPeQYCd4/preview",           
                  dlPath: "https://drive.google.com/uc?export=download&id=123KU2wt3Tt7sF3txwKcNxCnhaPeQYCd4",
                thumbnailPath: "https://m.media-amazon.com/images/I/71ohwJOrzTL.jpg",
@@ -472,8 +454,8 @@
                description: "Mathematical methods for engineering: differential equations, complex analysis, and numerical techniques.",
                category: "2ndyr",
                author: "Alan Jeffrey",
-               ed: "2002 Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "2002 Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/1VKvq0BPHS0Skg_3elPwJKPiAmaoziisi/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1VKvq0BPHS0Skg_3elPwJKPiAmaoziisi",
                thumbnailPath: "https://books.google.com/books/content?id=wfMeAQAAIAAJ&printsec=frontcover&img=1&zoom=1&imgtk=AFLRE70bud-w1NjQ6Be_sqJqks1FaECGQV7ECaD_Y0ohKRhwcaykCTTTKvxB___KXZ9PxKUqAZwOSIV34okROoS-eTTFZsPA6tI4RTvz4YIDSVQeObmZF63DRPNe8dEuNRGRSPu742Ne",
@@ -487,8 +469,8 @@
                description: "Comprehensive math reference covering linear algebra, vector calculus, and differential equations.",
                category: "2ndyr",
                author: "Kreyzig E.",
-               ed: "9th Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "9th Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/1xIpOtVIILN1pNN2oMieke3JDUBmdiqE4/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1xIpOtVIILN1pNN2oMieke3JDUBmdiqE4",
                thumbnailPath: "https://linuxpurchase.com/image/cache/catalog/Books/buy_online_9788126531356_advanced-engineering-mathematics-9th-edition-online-500x500.jpg",
@@ -499,11 +481,11 @@
              {
                id: 8,
                title: "Advanced Engineering Mathematics",
-               description: "blank description muna hehe",
+               description: "Comprehensive math reference covering advanced engineering topics, ideal for second-year engineering students.",
                category: "2ndyr",
                author: "Kreyzig E.",
-               ed: "10th Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "10th Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/1XKsARFKSlTgNaTAGnVvkQB61IoiuYzzc/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1XKsARFKSlTgNaTAGnVvkQB61IoiuYzzc",
                thumbnailPath: "https://ia601202.us.archive.org/BookReader/BookReaderImages.php?zip=/15/items/AdvancedEngineeringMathematics10thEdition_201510/Advanced%20Engineering%20Mathematics%2010th%20Edition_jp2.zip&file=Advanced%20Engineering%20Mathematics%2010th%20Edition_jp2/Advanced%20Engineering%20Mathematics%2010th%20Edition_0000.jp2&id=AdvancedEngineeringMathematics10thEdition_201510&scale=4&rotate=0",
@@ -514,11 +496,11 @@
              {
                id: 9,
                title: "Advanced Engineering Mathematics",
-               description: "blank description muna hehe",
+               description: "Detailed exploration of engineering mathematics concepts, tailored for second-year students in applied sciences and engineering.",
                category: "2ndyr",
                author: "Peter V. O'Neil",
-               ed: "7th Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "7th Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/1Afwp0EbccdOmEltwnZY4WxvLhJiaH-jo/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1Afwp0EbccdOmEltwnZY4WxvLhJiaH-jo",
                thumbnailPath: "https://m.media-amazon.com/images/I/71Z3ebd4M8L._AC_UF1000,1000_QL80_.jpg",
@@ -529,11 +511,11 @@
              {
                id: 10,
                title: "Advanced Modern Engineering Mathematics",
-               description: "blank description muna hehe",
+               description: "Modern approach to core engineering math topics, suited for second-year students in technical fields.",
                category: "2ndyr",
                author: "Glyn James",
-               ed: "4th Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "4th Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/1wIBn1D763nhduOBJsRfw2ylob_NQKsyF/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1wIBn1D763nhduOBJsRfw2ylob_NQKsyF",
                thumbnailPath: "https://dokumen.pub/img/advanced-modern-engineering-mathematics-4th-ed-9780273719236-3820106200-1171181221-0273719238.jpg",
@@ -544,11 +526,11 @@
              {
                id: 11,
                title: "Schaum's Outlines: Differential Equations",
-               description: "blank description muna hehe",
+               description: "Concise differential equations guide with solved problems—perfect for quick learning and exam preparation.",
                category: "2ndyr",
                author: "Bronson",
-               ed: "3rd Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "3rd Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/1950hKbVTEboiqwPvcouPG2h3a-fa0UF7/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1950hKbVTEboiqwPvcouPG2h3a-fa0UF7",
                thumbnailPath: "https://www.accessengineeringlibrary.com/sites/default/files/styles/cover_content_details/binary/mheaeworks/c67b07d759f006ab/70533ec26271ae2947ceb56964e04fdd7b832026e2b0b45799f0af75af3a3879/cover.jpg?itok=R6GTWvgp",
@@ -559,11 +541,11 @@
              {
                id: 12,
                title: "Higher Engineering Mathematics",
-               description: "blank description muna hehe",
+               description: "Extensive coverage of engineering math principles with practical examples, ideal for second-year technical courses.",
                category: "2ndyr",
                author: "John Bird",
-               ed: "7th Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "7th Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/15Lo_aB8WH5w5xReTqEpzxrbwmkle1PH3/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=15Lo_aB8WH5w5xReTqEpzxrbwmkle1PH3",
                thumbnailPath: "https://images.tandf.co.uk/common/jackets/crclarge/978041566/9780415662826.jpg",
@@ -574,11 +556,11 @@
              {
                id: 13,
                title: "Schaum's Outlines: Differential Equations Crash Course",
-               description: "blank description muna hehe",
+               description: "Fast-paced differential equations review with clear examples—ideal for last-minute study and quick understanding.",
                category: "2ndyr",
                author: "Bronson",
-               ed: "3rd Edition", //previously date
-               code: "ENS181",//previously fileSize
+               ed: "3rd Edition",  
+               code: "ENS181", 
                pdfPath: "https://drive.google.com/file/d/1MtTo_eL3mIQxCCQ9Nupae58t51qjDpYJ/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1MtTo_eL3mIQxCCQ9Nupae58t51qjDpYJ",
                thumbnailPath: "https://image.isu.pub/130116171402-de8a45e8174c4f52a2d5c8b691d456e8/jpg/page_1_thumb_large.jpg",
@@ -589,11 +571,11 @@
              {//ECT
                id: 14,
                title: "Fundamentals of Electric Circuit",
-               description: "blank description muna hehe",
+               description: "Core concepts in electric circuits explained with clarity—essential for second-year electrical and electronics students.",
                category: "2ndyr",
                author: "Matthew N.O. Sadiku",
-               ed: "3rd Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "3rd Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/1nln6F4yixW_wDI2rdXRRkA0Nxz27uklA/preview", // Replace with your actual PDF path
                dlPath: "https://drive.google.com/uc?export=download&id=1nln6F4yixW_wDI2rdXRRkA0Nxz27uklA", 
                thumbnailPath: "https://m.media-amazon.com/images/I/51EY9WW3P3L._AC_UF1000,1000_QL80_.jpg",
@@ -604,11 +586,11 @@
              {
                id: 15,
                title: "Fundamentals of Electric Circuit",
-               description: "blank description muna hehe",
+               description: "Updated edition covering electric circuit principles with examples—perfect for second-year electronics and electrical engineering students.",
                category: "2ndyr",
                author: "Matthew N.O. Sadiku",
-               ed: "5th Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "5th Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/1QV03rTudEbmQNbuJTM0nuB9f-Sh-cWYl/preview",
                dlPath: "https://drive.google.com/uc?export=download&id=1QV03rTudEbmQNbuJTM0nuB9f-Sh-cWYl",
                thumbnailPath: "https://m.media-amazon.com/images/I/71AvEEpNwyL._UF1000,1000_QL80_.jpg",
@@ -619,11 +601,11 @@
              {
                id: 16,
                title: "Engineering Circuit Analysis",
-               description: "blank description muna hehe",
+               description: "Thorough introduction to circuit analysis with practical applications—ideal for second-year ECE and EE students.",
                category: "2ndyr",
                author: "William H. Hayt, Jr. et al",
-               ed: "7th Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "7th Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/12WBu2Sqhl4-2Qgm8oQ_UyIbJ8cRvsMgZ/preview",
                dlPath: "https://drive.google.com/uc?export=download&id=12WBu2Sqhl4-2Qgm8oQ_UyIbJ8cRvsMgZ",
                thumbnailPath: "https://m.media-amazon.com/images/I/51pGCARE+gL._AC_UF1000,1000_QL80_.jpg",
@@ -634,11 +616,11 @@
              {
                id: 17,
                title: "Introductory Circuit Analysis",
-               description: "blank description muna hehe",
+               description: "Comprehensive guide to circuit analysis principles with examples, perfect for second-year electrical engineering students.",
                category: "2ndyr",
                author: "Boylestad",
-               ed: "10th Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "10th Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/1TRYW51myGXfKBt3uzH9UOSYmuxuJlgo6/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1TRYW51myGXfKBt3uzH9UOSYmuxuJlgo6",
                thumbnailPath: "https://m.media-amazon.com/images/I/51-rRAbyAQL._AC_UF1000,1000_QL80_.jpg",
@@ -649,11 +631,11 @@
              {
                id: 18,
                title: "Engineering Circuit Analysis",
-               description: "blank description muna hehe",
+               description: "Updated edition of circuit analysis principles with practical applications for second-year electronics and electrical engineering students.",
                category: "2ndyr",
                author: "William H. Hayt, Jr. et al",
-               ed: "8th Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "8th Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/19BSzmrnCw5muw3frwPa43BBuzWmTvAG9/preview",
                dlPath: "https://drive.google.com/uc?export=download&id=19BSzmrnCw5muw3frwPa43BBuzWmTvAG9",
                thumbnailPath: "https://static.wixstatic.com/media/defd98_8b047f54dd5f4879a24ebce117967dcb~mv2.png/v1/fill/w_300,h_370,al_c,q_85,usm_0.66_1.00_0.01,enc_avif,quality_auto/Item%20photo.png",
@@ -664,11 +646,11 @@
              {
                id: 19,
                title: "Basic Engineering Circuit Analysis",
-               description: "blank description muna hehe",
+               description: "Clear and detailed analysis of basic circuit concepts, offering practical applications and problem-solving strategies.",
                category: "2ndyr",
                author: "J. David Irwin, R. Mark Nelms",
-               ed: "11th Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "11th Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/1Iq-kiQkI660lR86cdFU9yfBuucLApTRX/preview",
                dlPath: "https://drive.google.com/uc?export=download&id=1Iq-kiQkI660lR86cdFU9yfBuucLApTRX",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQI92thATtIRqFgQqsPLaHZLht-LVQTUWHXZQ&s",
@@ -679,11 +661,11 @@
              {
                id: 20,
                title: "Electrical and Electronic Principles and Technology",
-               description: "blank description muna hehe",
+               description: "Comprehensive guide to electrical and electronic principles with practical applications for technology students",
                category: "2ndyr",
                author: "John Bird",
-               ed: "3rd Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "3rd Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/1A4ZLsMr5883m-B-QCWvusz8Iu1-JuRX4/preview",
                dlPath: "https://drive.google.com/uc?export=download&id=1A4ZLsMr5883m-B-QCWvusz8Iu1-JuRX4",
                thumbnailPath: "https://down-ph.img.susercontent.com/file/f91e388a25dd60bbd19f7408fcff2eeb",
@@ -694,11 +676,11 @@
              {
                id: 21,
                title: "Electrical Circuit Theory and Technology",
-               description: "blank description muna hehe",
+               description: "Clear explanation of circuit theory with in-depth technological applications for electronics students.",
                category: "2ndyr",
                author: "John Bird",
-               ed: "2nd Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "2nd Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/1wmJ9KFKSwHyK35itC_07xWgpVU96twwk/preview",
                dlPath: "https://drive.google.com/uc?export=download&id=1wmJ9KFKSwHyK35itC_07xWgpVU96twwk",
                thumbnailPath: "https://images.tandf.co.uk/common/jackets/crclarge/978075065/9780750657846.jpg",
@@ -709,11 +691,11 @@
              {
                id: 22,
                title: "Teach Yourself Electricity and Electronics",
-               description: "blank description muna hehe",
+               description: "A self-paced approach to learning electrical concepts, ideal for beginners or those looking to refresh knowledge.",
                category: "2ndyr",
                author: "Stan Gibilisco",
-               ed: "4th Edition", //previously date
-               code: "EEE130",//previously fileSize
+               ed: "4th Edition",  
+               code: "EEE130", 
                pdfPath: "https://drive.google.com/file/d/1q3mQRON9Tt0BkyQkSgu-qW1J8MWHedyS/preview",
                dlPath: "https://drive.google.com/uc?export=download&id=1q3mQRON9Tt0BkyQkSgu-qW1J8MWHedyS",
                thumbnailPath: "https://m.media-amazon.com/images/I/51UUG7dAy0L._AC_UF1000,1000_QL80_.jpg",
@@ -725,11 +707,11 @@
              {
                id: 23,
                title: "Electronic Devices and Circuit Theory",
-               description: "blank description muna hehe",
+               description: "Detailed analysis of electronic devices and circuits, perfect for students focusing on electronics.",
                category: "2ndyr",
                author: "Robert Boylestad et al.",
-               ed: "7th Edition", //previously date
-               code: "EEE170",//previously fileSize
+               ed: "7th Edition",  
+               code: "EEE170", 
                pdfPath: "https://drive.google.com/file/d/1IqGWTcQuguEjcGpS4J-eJl1229q19jKw/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1IqGWTcQuguEjcGpS4J-eJl1229q19jKw",
                thumbnailPath: "https://m.media-amazon.com/images/I/A1YVyeH2usL._AC_UF1000,1000_QL80_.jpg",
@@ -740,11 +722,11 @@
              {
                id: 24,
                title: "Principles of Electronics",
-               description: "blank description muna hehe",
+               description: "Fundamental electronics principles explored with examples, suitable for those entering the electronics field.",
                category: "2ndyr",
                author: "V&R Mehta",
-               ed: "11th Edition", //previously date
-               code: "EEE170",//previously fileSize
+               ed: "11th Edition",  
+               code: "EEE170", 
                pdfPath: "https://drive.google.com/file/d/1GBjSea7zycu8Z7pgRROOaQMlnR09iat2/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1GBjSea7zycu8Z7pgRROOaQMlnR09iat2",
                thumbnailPath: "https://m.media-amazon.com/images/I/71MAWO-6ZnL._AC_UF1000,1000_QL80_.jpg",
@@ -755,11 +737,11 @@
              {
                id: 25,
                title: "Electronic Design: Circuit and Systems",
-               description: "blank description muna hehe",
+               description: "Insight into designing electronic circuits and systems, with an emphasis on practical application.",
                category: "2ndyr",
                author: "Savant Jr., Roden, Carpenter",
-               ed: "2nd Edition", //previously date
-               code: "EEE170",//previously fileSize
+               ed: "2nd Edition",  
+               code: "EEE170", 
                pdfPath: "https://drive.google.com/file/d/1tMj3AgXAYVSEVmpaqGZL7x_ufsitn2sz/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1tMj3AgXAYVSEVmpaqGZL7x_ufsitn2sz",
                thumbnailPath: "https://covers.openlibrary.org/b/id/10546761-L.jpg",
@@ -770,11 +752,11 @@
              {
                id: 26,
                title: "Electronic Devices: Conventional Current Edition",
-               description: "blank description muna hehe",
+               description: "Comprehensive guide to electronics with a focus on conventional current and practical applications.",
                category: "2ndyr",
                author: "Thomas L. Floyd",
-               ed: "7th Edition", //previously date
-               code: "EEE170",//previously fileSize
+               ed: "7th Edition",  
+               code: "EEE170", 
                pdfPath: "https://drive.google.com/file/d/10rshpqOwVZF4ncTyN0CM1yQ-5FtWHhO7/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=10rshpqOwVZF4ncTyN0CM1yQ-5FtWHhO7",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTFOMr_HiwNa1_Q-xchHBWGx8FKd4q5uePb9Q&s",
@@ -785,11 +767,11 @@
              {
                id: 27,
                title: "Electronic Devices",
-               description: "blank description muna hehe",
+               description: "A thorough exploration of electronic devices, emphasizing circuit theory and device characteristics.",
                category: "2ndyr",
                author: "Thomas L. Floyd",
-               ed: "9th Edition", //previously date
-               code: "EEE170",//previously fileSize
+               ed: "9th Edition",  
+               code: "EEE170", 
                pdfPath: "https://drive.google.com/file/d/1DlAWTVbtdtzRSXutIaB_dx0qSjivDunZ/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1DlAWTVbtdtzRSXutIaB_dx0qSjivDunZ",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqWzsvDz1gLujSYpi25gbk5ufo3Ebymj9Qlw&s",
@@ -804,8 +786,8 @@
                description: "This is a compilation of the entire Code of Ethics and Law in ECE. The View and Download button will direct to a GDrive Link.",
                category: "4thyr",
                author: "",
-               ed: "Compilation", //previously date
-               code: "ECE114",//previously fileSize
+               ed: "Compilation",  
+               code: "ECE114", 
                pdfPath: "https://drive.google.com/drive/folders/1lR7u02uu3zimVTxKO-WerV65GhKtspEK?usp=drive_link",           
                dlPath: "https://drive.google.com/drive/folders/1lR7u02uu3zimVTxKO-WerV65GhKtspEK?usp=drive_link",
                thumbnailPath: "https://upload.wikimedia.org/wikipedia/commons/thumb/2/2f/Professional_Regulation_Commission_%28PRC%29.svg/1200px-Professional_Regulation_Commission_%28PRC%29.svg.png",
@@ -817,11 +799,11 @@
              {
                id: 29,
                title: "Engineering Electromagnetics",
-               description: "blank description muna hehe",
+               description: "In-depth coverage of electromagnetic fields and their application in engineering.",
                category: "2ndyr",
                author: "Hayt Jr., Buck",
-               ed: "Compilation", //previously date
-               code: "ECE116",//previously fileSize
+               ed: "Compilation",  
+               code: "ECE116", 
                pdfPath: "https://drive.google.com/file/d/1GLqt1uO4uXNfG0dlkbjJ7QltpFf1zK2C/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1GLqt1uO4uXNfG0dlkbjJ7QltpFf1zK2C",
                thumbnailPath: "https://s3.refhub.ir/images/thumb/Engineering_Electromagnetics__8th_Edition_35536.webp",
@@ -833,11 +815,11 @@
             {
                id: 30,
                title: "Communication Electronics",
-               description: "blank description muna hehe",
+               description: "A practical approach to communication systems, focusing on key electronics principles and technologies.",
                category: "3rdyr",
                author: "Louis E. Frenzel",
-               ed: "2nd Edition", //previously date
-               code: "ECE106",//previously fileSize
+               ed: "2nd Edition",  
+               code: "ECE106", 
                pdfPath: "https://drive.google.com/file/d/1pTsi0RrUfwgOG3MHKFndLKKMaZTEq8cK/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1pTsi0RrUfwgOG3MHKFndLKKMaZTEq8cK",
                thumbnailPath: "https://m.media-amazon.com/images/I/51CDM93GE2L._AC_UF1000,1000_QL80_.jpg",
@@ -848,11 +830,11 @@
             {
                id: 31,
                title: "Communication Engineering - Black Book",
-               description: "blank description muna hehe",
+               description: "Comprehensive reference on communication engineering, covering both theory and practical techniques.",
                category: "3rdyr",
                author: "Christopher Soon",
-               ed: "2nd Edition", //previously date
-               code: "ECE110",//previously fileSize
+               ed: "2nd Edition",  
+               code: "ECE110", 
                pdfPath: "https://drive.google.com/file/d/1DWZUYw3vSLSAq1erSFt82ySYVmjHXP4x/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1DWZUYw3vSLSAq1erSFt82ySYVmjHXP4x",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRRf25QSgcTDTmpIcjL_q3-rAHnmv-vZF5-1g&s",
@@ -863,11 +845,11 @@
              {
                id: 32,
                title: "Data Communication and Networking",
-               description: "blank description muna hehe",
+               description: "Detailed analysis of data communications systems and network architectures.",
                category: "3rdyr",
                author: "Behrouz A. Forouzan",
-               ed: "4th Edition", //previously date
-               code: "ECE110",//previously fileSize
+               ed: "4th Edition",  
+               code: "ECE110", 
                pdfPath: "https://drive.google.com/file/d/1rBZnR4ZhkdH24VAHVw2LOPdygze4VQk-/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1rBZnR4ZhkdH24VAHVw2LOPdygze4VQk-",
                thumbnailPath: "https://m.media-amazon.com/images/I/71gfvWeTAiL._AC_UF1000,1000_QL80_.jpg",
@@ -878,11 +860,11 @@
                {
                id: 33,
                title: "Electronic Communication Systems",
-               description: "blank description muna hehe",
+               description: "Guide to modern communication systems, from basic principles to complex digital transmission.",
                category: "3rdyr",
                author: "Kennedy, Davis",
-               ed: "4th Edition", //previously date
-               code: "ECE106",//previously fileSize
+               ed: "4th Edition",  
+               code: "ECE106", 
                pdfPath: "https://drive.google.com/file/d/1hBGWHCKTgStaMpCn5fUCm9wysjd8K4kK/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1hBGWHCKTgStaMpCn5fUCm9wysjd8K4kK",
                thumbnailPath: "https://nilkhetboi.com/wp-content/uploads/2021/06/Electronics-Communication-Systems-4th-Edition-By-Kennedy-and-Davis-284x300.png",
@@ -893,11 +875,11 @@
                {
                id: 34,
                title: "Electronic Communication Systems",
-               description: "blank description muna hehe",
+               description: "Essential resource on the principles of communication and electronic systems.",
                category: "2ndyr",
                author: "Roy Blake",
-               ed: "2nd Edition", //previously date
-               code: "ECE102",//previously fileSize
+               ed: "2nd Edition",  
+               code: "ECE102", 
                pdfPath: "https://drive.google.com/file/d/12blzfamP7hTYwZQpcsjAAhV4ZfVJ_RFh/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=12blzfamP7hTYwZQpcsjAAhV4ZfVJ_RFh",
                thumbnailPath: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1491096811i/34751045.jpg",
@@ -908,11 +890,11 @@
                {
                id: 35,
                title: "Electronic Communication Systems",
-               description: "blank description muna hehe",
+               description: "Focuses on transmission lines, antennas, and media for effective communication.",
                category: "2ndyr",
                author: "Wayne Tomasi",
-               ed: "5th Edition", //previously date
-               code: "ECE102",//previously fileSize
+               ed: "5th Edition",  
+               code: "ECE102", 
                pdfPath: "https://drive.google.com/file/d/13exqd3aCrtfnO--gyrK21JxnQhQfb9iz/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=13exqd3aCrtfnO--gyrK21JxnQhQfb9iz",
                thumbnailPath: "https://imgv2-2-f.scribdassets.com/img/document/530189239/original/933d660dd1/1?v=1",
@@ -923,11 +905,11 @@
                {
                id: 36,
                title: "Electronic Communication Systems",
-               description: "blank description muna hehe",
+               description: "Covers core concepts and techniques in electronic communication systems.",
                category: "3rdyr",
                author: "Alejandro Ballado",
-               ed: "nth Edition", //previously date
-               code: "ECE108",//previously fileSize
+               ed: "nth Edition",  
+               code: "ECE108", 
                pdfPath: "https://drive.google.com/file/d/1KM0I947BNCWm0bgizU9fIh0uj_sZwory/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1KM0I947BNCWm0bgizU9fIh0uj_sZwory",
                thumbnailPath: "https://img.lazcdn.com/live/ph/p/bdc1db3bc85fdf5cdb9e28c380849bff.jpg_720x720q80.jpg",
@@ -938,11 +920,11 @@
                {
                id: 37,
                title: "Principles of Electronic Communication System",
-               description: "blank description muna hehe",
+               description: "Provides essential knowledge of electronic communication principles and systems.",
                category: "3rdyr",
                author: "Louis Frenzel",
-               ed: "4th Edition", //previously date
-               code: "ECE106",//previously fileSize
+               ed: "4th Edition",  
+               code: "ECE106", 
                pdfPath: "https://drive.google.com/file/d/18HgwwtidIGXB3wYRHXZjxUuISLAfV63w/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=18HgwwtidIGXB3wYRHXZjxUuISLAfV63w",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRinyxaFMkGBECCxfawgqVTpfT1X3rrs-5hYw&s",
@@ -953,11 +935,11 @@
                {
                id: 38,
                title: "Principles of Electronic Communication System",
-               description: "blank description muna hehe",
+               description: "Fundamental concepts and practices in environmental engineering, emphasizing sustainable development.",
                category: "3rdyr",
                author: "Louis Frenzel",
-               ed: "3rd Edition", //previously date
-               code: "ECE106",//previously fileSize
+               ed: "3rd Edition",  
+               code: "ECE106", 
                pdfPath: "https://drive.google.com/file/d/1T-DfRLUe1-EQbNtU8sRGtT8flZRhddUo/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1T-DfRLUe1-EQbNtU8sRGtT8flZRhddUo",
                thumbnailPath: "https://rukminim2.flixcart.com/image/850/1000/kjkbv680-0/book/z/e/j/principles-of-electronic-communication-systems-original-imafz3rv5v8gvzca.jpeg?q=20&crop=false",
@@ -969,11 +951,11 @@
                {
                id: 39,
                title: "Basic Environmental Engineering",
-               description: "blank description muna hehe",
+               description: "Fundamental concepts and practices in environmental engineering, emphasizing sustainable development.",
                category: "2ndyr",
                author: "R.C Gaur",
-               ed: "nth Edition", //previously date
-               code: "ENS195",//previously fileSize
+               ed: "nth Edition",  
+               code: "ENS195", 
                pdfPath: "https://drive.google.com/file/d/1GnCX7FfHh2oAUryfr8CGoJpd3qiiUYsJ/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1GnCX7FfHh2oAUryfr8CGoJpd3qiiUYsJ",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7CyqY_ReboTlhQq24OoDM2AlIIP7h3YiF5g&s",
@@ -984,11 +966,11 @@
                {
                id: 40,
                title: "Introduction to Environmental Engineering",
-               description: "blank description muna hehe",
+               description: "A practical introduction to environmental engineering, covering core principles and modern challenges.",
                category: "2ndyr",
                author: "Vesilind, Morgan, Heine",
-               ed: "3rd Edition", //previously date
-               code: "ENS195",//previously fileSize
+               ed: "3rd Edition",  
+               code: "ENS195", 
                pdfPath: "https://drive.google.com/file/d/1ZjOmRJePX5Vgi6_z0BCqeeHD6ByTqCwY/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1ZjOmRJePX5Vgi6_z0BCqeeHD6ByTqCwY",
                thumbnailPath: "https://covers.openlibrary.org/b/id/9465050-L.jpg",
@@ -1000,11 +982,11 @@
                {
                id: 41,
                title: "Engineering Economy",
-               description: "blank description muna hehe",
+               description: "Explains economic decision-making methods in engineering, focusing on cost analysis and project evaluation.",
                category: "3rdyr",
                author: "Leland Blank et al.",
-               ed: "7th Edition", //previously date
-               code: "ENS191",//previously fileSize
+               ed: "7th Edition",  
+               code: "ENS191", 
                pdfPath: "https://drive.google.com/file/d/1HYIVztxe3AKtYEjpsNFloCyEGNcAz0w9/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1HYIVztxe3AKtYEjpsNFloCyEGNcAz0w9",
                thumbnailPath: "https://m.media-amazon.com/images/I/61VM1aQZIAL._AC_UF1000,1000_QL80_.jpg",
@@ -1015,11 +997,11 @@
                {
                id: 42,
                title: "Engineering Economy",
-               description: "blank description muna hehe",
+               description: "Comprehensive guide to engineering economic analysis with real-world examples and applications in decision-making.",
                category: "3rdyr",
                author: "Sullivan, Wicks, Koelling",
-               ed: "16th Edition", //previously date
-               code: "ENS191",//previously fileSize
+               ed: "16th Edition",  
+               code: "ENS191", 
                pdfPath: "https://drive.google.com/file/d/1ByYfIktSxMwKp7ze3g-qYBbswM_cdgJH/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1ByYfIktSxMwKp7ze3g-qYBbswM_cdgJH",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTPrNYa7uhJus__2QBubcdY3CtZiG8A8_935g&s",
@@ -1031,11 +1013,11 @@
                {
                id: 43,
                title: "University Physics with Modern Physics",
-               description: "blank description muna hehe",
+               description: "Covers classical and modern physics concepts, ideal for engineers requiring a broad physics foundation.",
                category: "1styr",
                author: "Young, Freeman",
-               ed: "13th Edition", //previously date
-               code: "ENS140",//previously fileSize
+               ed: "13th Edition",  
+               code: "ENS140", 
                pdfPath: "https://drive.google.com/file/d/1cxEwbShTd1JMlVmAyq8aGUTvNNvKL8ip/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1cxEwbShTd1JMlVmAyq8aGUTvNNvKL8ip",
                thumbnailPath: "https://0.academia-photos.com/attachment_thumbnails/62142371/mini_magick20240803-1-y37jz.png?1722727256",
@@ -1046,11 +1028,11 @@
                {
                id: 44,
                title: "University Physics",
-               description: "blank description muna hehe",
+               description: "In-depth exploration of physics principles with a focus on mechanics, thermodynamics, and electromagnetism for engineers.",
                category: "1styr",
                author: "Young, Freeman",
-               ed: "13th Edition", //previously date
-               code: "ENS140",//previously fileSize
+               ed: "13th Edition",  
+               code: "ENS140", 
                pdfPath: "https://drive.google.com/file/d/1RjuG5UPaGpey-TLRyKTjlhZildRpkDKs/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1RjuG5UPaGpey-TLRyKTjlhZildRpkDKs",
                thumbnailPath: "https://m.media-amazon.com/images/I/81JNB5TQaIL._SL1500_.jpg",
@@ -1062,11 +1044,11 @@
                {
                id: 45,
                title: "Probability & Statistics for Engineers & Scientists",
-               description: "blank description muna hehe",
+               description: "Introduces probability theory and statistical methods tailored to engineering and scientific applications.",
                category: "3rdyr",
                author: "Wapole, Myers",
-               ed: "9th Edition", //previously date
-               code: "ENS185",//previously fileSize
+               ed: "9th Edition",  
+               code: "ENS185", 
                pdfPath: "https://drive.google.com/file/d/1apAgoXU_Qz2HKF7zLvLXR-4V8G5HZElU/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1apAgoXU_Qz2HKF7zLvLXR-4V8G5HZElU",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTChb7C6pIOnu0IdH1naxvWTB_v_2vMgVP3Og&s",
@@ -1077,11 +1059,11 @@
                {
                id: 46,
                title: "Probability & Statistics for Engineers & Scientists",
-               description: "blank description muna hehe",
+               description: "Provides statistical tools and techniques necessary for analyzing data in engineering and scientific fields.",
                category: "3rdyr",
                author: "Wapole, Myers",
-               ed: "8th Edition", //previously date
-               code: "ENS185",//previously fileSize
+               ed: "8th Edition",  
+               code: "ENS185", 
                pdfPath: "https://drive.google.com/file/d/1vvN5QIcMcnVPGgSeiLfcKZ1Pzv4_SvaS/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=1apAgoXU_Qz2HKF7zLvLXR-4V8G5HZElU",
                thumbnailPath: "https://www.urbanbae.com/media/uploads/products/j/6eb72c3b167adb61b70bad6309a42a51.jpeg",
@@ -1092,11 +1074,11 @@
                {
                id: 47,
                title: "Applied Statistics and Probability for Engineers",
-               description: "blank description muna hehe",
+               description: "Practical applications of statistics and probability theory in solving engineering problems and real-world data analysis.",
                category: "3rdyr",
                author: "Montgomery, Runger",
-               ed: "5th Edition", //previously date
-               code: "ENS185",//previously fileSize
+               ed: "5th Edition",  
+               code: "ENS185", 
                pdfPath: "https://drive.google.com/file/d/163MTI_SVz-1Eglbjs9K4nEzLX0QK9OR3/preview",         
                dlPath: "https://drive.google.com/uc?export=download&id=163MTI_SVz-1Eglbjs9K4nEzLX0QK9OR3",
                thumbnailPath: "https://m.media-amazon.com/images/I/51Q3fsPfeLL.jpg",
@@ -1107,11 +1089,11 @@
                {
                id: 48,
                title: "Digital Signal Processing Fundamentals and Applications",
-               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE.",
+               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE students.  ",
                category: "3rdyr",
                author: "Li Tan et al.",
-               ed: "2nd Edition", //previously date
-               code: "ECE104",//previously fileSize
+               ed: "2nd Edition",  
+               code: "ECE104", 
                pdfPath: "https://drive.google.com/file/d/10ahCXxVs0O1BEXijcfrCZV2iSiTu6Ibn/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=10ahCXxVs0O1BEXijcfrCZV2iSiTu6Ibn",
                thumbnailPath: "https://secure-ecsd.elsevier.com/covers/80/Tango2/large/9780124158931.jpg",
@@ -1122,11 +1104,11 @@
                {
                id: 49,
                title: "Schaum's Outlines: Digital Signal Processing",
-               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE.",
+               description: "A comprehensive guide to DSP, including Fourier analysis and MATLAB applications for ECE students.",
                category: "3rdyr",
                author: "Monson Hayes",
-               ed: "nth Edition", //previously date
-               code: "ECE104",//previously fileSize
+               ed: "nth Edition",  
+               code: "ECE104", 
                pdfPath: "https://drive.google.com/file/d/1ZEeU3xY3Sn8J5bNsPI-yHOJ6dNi9Lk24/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1ZEeU3xY3Sn8J5bNsPI-yHOJ6dNi9Lk24/",
                thumbnailPath: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR4CAv6hkmlcNbl59tWLIB5Kyvua6ov1DRbIw&s",
@@ -1137,11 +1119,11 @@
                {
                id: 50,
                title: "Signal Processing & Linear Systems",
-               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE.",
+               description: "A detailed study of DSP concepts and linear systems with practical applications using MATLAB for ECE students.",
                category: "3rdyr",
                author: "B.P. Lathi",
-               ed: "2nd Edition", //previously date
-               code: "ECE104",//previously fileSize
+               ed: "2nd Edition",  
+               code: "ECE104", 
                pdfPath: "https://drive.google.com/file/d/1vHvnRIBQUUUBod7br_g0FqpThgGMkLGz/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1vHvnRIBQUUUBod7br_g0FqpThgGMkLGz/",
                thumbnailPath: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1348980741i/937274.jpg",
@@ -1152,11 +1134,11 @@
                {
                id: 51,
                title: "Schaum's Outlines: Signals and Systems",
-               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE.",
+               description: "Explores DSP fundamentals, Fourier analysis, and MATLAB applications for ECE students in signals and systems.",
                category: "3rdyr",
                author: "Hwei P. Hsu",
-               ed: "nth Edition", //previously date
-               code: "ECE104",//previously fileSize
+               ed: "nth Edition",  
+               code: "ECE104", 
                pdfPath: "https://drive.google.com/file/d/1DaL3kYH3NPBtQFpM46hvYtN-6uL-PWzo/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1DaL3kYH3NPBtQFpM46hvYtN-6uL-PWzo/",
                thumbnailPath: "https://images-na.ssl-images-amazon.com/images/S/compressed.photo.goodreads.com/books/1386924355i/205536.jpg",
@@ -1167,11 +1149,11 @@
                {
                id: 52,
                title: "Signals and Systems",
-               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE.",
+               description: "Comprehensive guide on DSP and Fourier analysis, with MATLAB applications tailored for ECE students.",
                category: "3rdyr",
                author: "Oppenheim",
-               ed: "2nd Edition", //previously date
-               code: "ECE104",//previously fileSize
+               ed: "2nd Edition",  
+               code: "ECE104", 
                pdfPath: "https://drive.google.com/file/d/16G-a9IBL0oZrAXJK8hoZ9WeaapJDcDRM/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=16G-a9IBL0oZrAXJK8hoZ9WeaapJDcDRM/",
                thumbnailPath: "https://www.pearson.com/store//pmccommercewebservices/v2/medias/size-W370-A1017-03-02-56-A101703025674-A101703025674-Lrg.jpg?context=bWFzdGVyfGltYWdlc3wxMTc5OTR8aW1hZ2UvanBlZ3xzeXMtbWFzdGVyL2ltYWdlcy9oMzIvaDU3LzEzNzM0NzI1OTEwNTU4L3NpemVfVzM3MF8vQTEwMTcvMDMvMDIvNTYvQTEwMTcwMzAyNTY3NC9BMTAxNzAzMDI1Njc0X0xyZy5qcGd8ZTE1YTEyMDlkNzE0ZDQ0NWNmNmNiMjA2MjJhNDk2ZmJkMmEyMTcxYTc3OTU4YTBmYWIyYWI0YmVkOTliNzFmMg",
@@ -1182,11 +1164,11 @@
                {
                id: 53,
                title: "Signals and Systems",
-               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE.",
+               description: "In-depth study of signals and systems, emphasizing Fourier analysis and practical applications using MATLAB for ECE.",
                category: "3rdyr",
                author: "Sadiku, Ali",
-               ed: "nth Edition", //previously date
-               code: "ECE104",//previously fileSize
+               ed: "nth Edition",  
+               code: "ECE104", 
                pdfPath: "https://drive.google.com/file/d/1KcvCF1IeEHtufyLLcAvUN8iQxC9Poy-A/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1KcvCF1IeEHtufyLLcAvUN8iQxC9Poy-A/",
                thumbnailPath: "https://images.tandf.co.uk/common/jackets/crclarge/978042917/9780429171710.jpg",
@@ -1197,11 +1179,11 @@
                {
                id: 54,
                title: "Signals and Systems Using MATLAB",
-               description: "Covers DSP fundamentals, Fourier analysis, and applications using MATLAB for third-year ECE.",
+               description: "Focuses on DSP fundamentals and Fourier analysis with MATLAB applications for ECE students in signals and systems.",
                category: "3rdyr",
                author: "Luis F. Chaparro",
-               ed: "nth Edition", //previously date
-               code: "ECE104",//previously fileSize
+               ed: "nth Edition",  
+               code: "ECE104", 
                pdfPath: "https://drive.google.com/file/d/1QUBEW_S0GVASWGLj0MVgayrFClDzhxmZ/preview",           
                dlPath: "https://drive.google.com/uc?export=download&id=1QUBEW_S0GVASWGLj0MVgayrFClDzhxmZ/",
                thumbnailPath: "https://ars.els-cdn.com/content/image/3-s2.0-C20090193753-cov200h.gif",
